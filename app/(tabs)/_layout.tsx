@@ -6,16 +6,22 @@ export default function TabLayout() {
     <Tabs
       screenOptions={{
         headerShown: false,
-        tabBarActiveTintColor: "green",
+        tabBarActiveTintColor: "#4CAF50",
+        tabBarInactiveTintColor: "gray",
+        tabBarStyle: {
+          height: 65,
+          paddingBottom: 8
+        }
       }}
     >
+
       <Tabs.Screen
         name="index"
         options={{
           title: "Shop",
-          tabBarIcon: ({ color }) => (
-            <Ionicons name="storefront-outline" size={22} color={color} />
-          ),
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="storefront-outline" size={size} color={color} />
+          )
         }}
       />
 
@@ -23,29 +29,29 @@ export default function TabLayout() {
         name="explore"
         options={{
           title: "Explore",
-          tabBarIcon: ({ color }) => (
-            <Ionicons name="search-outline" size={22} color={color} />
-          ),
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="search" size={size} color={color} />
+          )
         }}
       />
 
       <Tabs.Screen
         name="cart"
         options={{
-          title: "Cart",
-          tabBarIcon: ({ color }) => (
-            <Ionicons name="cart-outline" size={22} color={color} />
-          ),
+          title: "MyCart",
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="cart-outline" size={size} color={color} />
+          )
         }}
       />
 
       <Tabs.Screen
         name="favourite"
         options={{
-          title: "Favourite",
-          tabBarIcon: ({ color }) => (
-            <Ionicons name="heart-outline" size={22} color={color} />
-          ),
+          title: "Favorites",
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="heart-outline" size={size} color={color} />
+          )
         }}
       />
 
@@ -53,11 +59,12 @@ export default function TabLayout() {
         name="account"
         options={{
           title: "Account",
-          tabBarIcon: ({ color }) => (
-            <Ionicons name="person-outline" size={22} color={color} />
-          ),
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="person-outline" size={size} color={color} />
+          )
         }}
       />
+
     </Tabs>
   );
 }
