@@ -1,4 +1,5 @@
 import { Ionicons } from "@expo/vector-icons";
+import { useRouter } from "expo-router";
 import {
   FlatList,
   Image,
@@ -47,6 +48,8 @@ const favoriteData = [
 ];
 
 export default function FavoritesScreen() {
+
+  const router = useRouter();
   const renderItem = ({ item }: any) => (
     <View style={styles.itemContainer}>
       <Image source={item.image} style={styles.image} />
@@ -77,9 +80,12 @@ export default function FavoritesScreen() {
         contentContainerStyle={{ paddingBottom: 120 }}
       />
 
-      <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>Add All To Cart</Text>
-      </TouchableOpacity>
+      <TouchableOpacity
+  style={styles.button}
+  onPress={() => router.push("/error")}
+>
+  <Text style={styles.buttonText}>Add All To Cart</Text>
+</TouchableOpacity>
     </View>
   );
 }

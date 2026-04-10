@@ -6,22 +6,22 @@ export default function TabLayout() {
     <Tabs
       screenOptions={{
         headerShown: false,
-        tabBarActiveTintColor: "#4CAF50",
-        tabBarInactiveTintColor: "gray",
+        tabBarActiveTintColor: "#53B175",
+        tabBarInactiveTintColor: "#999",
         tabBarStyle: {
-          height: 65,
-          paddingBottom: 8
-        }
+          height: 70,
+          paddingBottom: 8,
+          paddingTop: 8,
+        },
       }}
     >
-
       <Tabs.Screen
         name="index"
         options={{
           title: "Shop",
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="storefront-outline" size={size} color={color} />
-          )
+          ),
         }}
       />
 
@@ -30,28 +30,28 @@ export default function TabLayout() {
         options={{
           title: "Explore",
           tabBarIcon: ({ color, size }) => (
-            <Ionicons name="search" size={size} color={color} />
-          )
+            <Ionicons name="search-outline" size={size} color={color} />
+          ),
         }}
       />
 
       <Tabs.Screen
         name="cart"
         options={{
-          title: "MyCart",
+          title: "My Cart",
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="cart-outline" size={size} color={color} />
-          )
+          ),
         }}
       />
 
       <Tabs.Screen
         name="favourite"
         options={{
-          title: "Favorites",
+          title: "Favourite",
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="heart-outline" size={size} color={color} />
-          )
+          ),
         }}
       />
 
@@ -61,10 +61,9 @@ export default function TabLayout() {
           title: "Account",
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="person-outline" size={size} color={color} />
-          )
+          ),
         }}
       />
-
     </Tabs>
   );
 }
